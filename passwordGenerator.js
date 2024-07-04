@@ -11,7 +11,7 @@ function generatePassword() {
     const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const special = '!@#$%^&*()_+[]{}|;:,.<>?';
 
-    if (length < 6 || length > 50) {
+    if (length < 6 || length > 100) {
         alert('Ange ett nummer mellan 6 och 50 för lösenordslängd.');
         return;
     }
