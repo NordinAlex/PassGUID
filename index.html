@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PassGUID</title>
+    <title>PassGUID - Generera Säkra Lösenord och GUID</title>
+    <meta name="description" content="PassGUID är ett verktyg för att enkelt och snabbt generera säkra lösenord och GUID. Använd PassGUID för att skapa säkra och unika lösenord och GUID.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -13,6 +15,16 @@
         <header class="header">
             <h1 class="main-title">PassGUID</h1>
             <p class="sub-title">Enkel och snabb generering av säkra lösenord och GUID.</p>
+            <!-- Change language -->
+           
+                <div class="language-container">
+                    <img class="flag-switch swe-flag" src="Assets/Images/sweden-flag-icon.svg" alt="Swedish Flag">
+                    <input id="language-toggle" class="language-input" type="checkbox" />
+                    <label class="language-label" for="language-toggle"><span>Svenska</span></label>
+                    <img class="flag-switch uk-flag" src="Assets/Images/united-kingdom-flag-icon.svg" alt="UK Flag">                     
+                </div>
+              
+           
         </header>
 
         <main class="container">
@@ -77,7 +89,7 @@
                         <label for="guid-format-commas" title="Separera varje GUID med kommatecken"> Separera GUID med kommatecken</label>
                     </span>
                     <br>
-                     <span>
+                    <span>
                         <input type="checkbox" id="guid-new-line" title="Varje GUID på ny rad" onclick="toggleGUIDFormat()">
                         <label for="guid-new-line" title="Varje GUID på ny rad"> Varje GUID på ny rad</label>
                     </span>
@@ -91,11 +103,13 @@
     </div>
 
     <footer class="footer">
-        <p class="footer-p">&copy; 2024 PassGUID. Made with ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
+        <p class="footer-p">&copy; 2024 PassGUID. Gjord med ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
     </footer>    
 
     <script src="passwordGenerator.js"></script>
     <script src="guidGenerator.js"></script>
+    <script src="language.js"></script>
+    
 </body>
 
 </html>
