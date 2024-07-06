@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PassGUID - Generate Secure Passwords and GUIDs</title>
+    <meta name="description" content="PassGUID is a tool for quickly and easily generating secure passwords and GUIDs. Use PassGUID to create secure and unique passwords and GUIDs.">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/Assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="main-title">PassGUID</h1>
+            <p class="sub-title">Easy and quick generation of secure passwords and GUID.</p>
+            <!-- Change language -->
+            <div class="language-container">
+                <img class="flag-switch swe-flag" src="/Assets/Images/sweden-flag-icon.svg" alt="Swedish Flag">
+                <input id="language-toggle" class="language-input" type="checkbox" />
+                <label class="language-label" for="language-toggle"><span>English</span></label>
+                <img class="flag-switch uk-flag" src="/Assets/Images/united-kingdom-flag-icon.svg" alt="UK Flag">
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Password Generator -->
+            <section class="password-section">
+                <h2>Generate Password</h2>
+                <fieldset>
+                    <legend>Password Settings</legend>
+                    <span>
+                        <label for="length">Length (6-100):</label>
+                        <input type="number" id="length" min="6" max="50" value="12">
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="include-numbers" checked>
+                        <label for="include-numbers">Include Numbers</label>
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="include-lowercase" checked>
+                        <label for="include-lowercase">Include Lowercase Letters</label>
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="include-uppercase" checked>
+                        <label for="include-uppercase">Include Uppercase Letters</label>
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="include-special" checked>
+                        <label for="include-special">Include Special Characters</label>
+                    </span>
+                </fieldset>
+                <br>
+                <button onclick="generatePassword()">Generate Password</button>
+                <button id="copy-password-btn" onclick="copyToClipboard('password-result', 'copy-password-btn')" disabled>Copy</button>
+                <p id="password-result" class="results"></p>
+            </section>
+
+            <!-- GUID Generator -->
+            <section class="guid-section">
+                <h2>Generate GUID</h2>
+                <fieldset>
+                    <legend>GUID Settings</legend>
+                    <span>
+                        <label for="bulk-count">Count (1-500):</label>
+                        <input type="number" id="bulk-count" min="1" max="500" value="1">
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="guid-format-curly-braces" title="Add curly braces" onclick="toggleGUIDFormat()">
+                        <label for="guid-format-curly-braces" title="Add curly braces"> With Curly Braces {} </label>
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="guid-format-double-quotes" title="Add double quotes" onclick="toggleGUIDFormat()">
+                        <label for="guid-format-double-quotes" title="Add double quotes"> With Double Quotes " "</label>
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="guid-format-commas" title="Separate each GUID with commas" onclick="toggleGUIDFormat()">
+                        <label for="guid-format-commas" title="Separate each GUID with commas"> Separate GUID with Commas</label>
+                    </span>
+                    <br>
+                    <span>
+                        <input type="checkbox" id="guid-new-line" title="Each GUID on new line" onclick="toggleGUIDFormat()">
+                        <label for="guid-new-line" title="Each GUID on new line"> Each GUID on New Line</label>
+                    </span>
+                </fieldset>
+                <br>
+                <button onclick="generateBulkGUID()">Generate GUID</button>
+                <button id="copy-bulk-guid-btn" onclick="copyBulkToClipboard()" disabled>Copy GUID</button>
+                <div id="bulk-guid-result" class="results"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-p">&copy; 2024 PassGUID. Made with ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
+    </footer>    
+
+    <script src="../passwordGenerator.js"></script>
+    <script src="../guidGenerator.js"></script>
+    <script src="../language.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const languageToggle = document.getElementById('language-toggle');
+
+            // Check current language and set the toggle state
+            if (window.location.pathname.includes('/en')) {
+                languageToggle.checked = true;
+            }
+
+            languageToggle.addEventListener('change', function () {
+                const newPath = languageToggle.checked ? '/en' : '/';
+                window.location.href = window.location.origin + newPath;
+            });
+        });
+    </script>
+</body>
+
+</html>

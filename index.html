@@ -7,13 +7,24 @@
     <title>PassGUID - Generera Säkra Lösenord och GUID</title>
     <meta name="description" content="PassGUID är ett verktyg för att enkelt och snabbt generera säkra lösenord och GUID. Använd PassGUID för att skapa säkra och unika lösenord och GUID.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="wrapper">
         <header class="header">
-            <h1 class="main-title">PassGUID</h1>         
+            <h1 class="main-title">PassGUID</h1>
             <p class="sub-title">Enkel och snabb generering av säkra lösenord och GUID.</p>
+            <!-- Change language -->
+           
+                <div class="language-container">
+                    <img class="flag-switch swe-flag" src="Assets/Images/sweden-flag-icon.svg" alt="Swedish Flag">
+                    <input id="language-toggle" class="language-input" type="checkbox" />
+                    <label class="language-label" for="language-toggle"><span>Svenska</span></label>
+                    <img class="flag-switch uk-flag" src="Assets/Images/united-kingdom-flag-icon.svg" alt="UK Flag">                     
+                </div>
+              
+           
         </header>
 
         <main class="container">
@@ -92,11 +103,27 @@
     </div>
 
     <footer class="footer">
-        <p class="footer-p">&copy; 2024 PassGUID. Made with ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
+        <p class="footer-p">&copy; 2024 PassGUID. Gjord med ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
     </footer>    
 
     <script src="passwordGenerator.js"></script>
     <script src="guidGenerator.js"></script>
+    <script src="language.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const languageToggle = document.getElementById('language-toggle');
+
+            // Check current language and set the toggle state
+            if (window.location.pathname.includes('/en')) {
+                languageToggle.checked = true;
+            }
+
+            languageToggle.addEventListener('change', function () {
+                const newPath = languageToggle.checked ? '/en' : '/';
+                window.location.href = window.location.origin + newPath;
+            });
+        });
+    </script>
 </body>
 
 </html>

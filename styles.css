@@ -1,10 +1,11 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -52,7 +53,12 @@ body {
     margin: 0 auto;
 }
 
-.password-section, .guid-section {
+.language-select {
+    margin-top: 10px;
+}
+
+.password-section,
+.guid-section {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -69,7 +75,8 @@ body {
     border-radius: 5px;
     word-break: break-all;
 }
-#bulk-guid-result {  
+
+#bulk-guid-result {
     max-height: var(--bulk-guid-result-height, 300px);
     overflow-y: auto;
 }
@@ -94,7 +101,8 @@ label {
     margin-top: 5px;
 }
 
-input[type="number"], input[type="checkbox"] {
+input[type="number"],
+input[type="checkbox"] {
     margin-top: 5px;
 }
 
@@ -119,7 +127,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-
 button.copied {
     background-color: #28a745;
 }
@@ -127,19 +134,22 @@ button.copied {
 footer {
     background-color: #333;
     color: #ffffff;
-    text-align: center;
     padding: 20px 0;
     margin-top: 30px;
     width: 100%;
 }
 
-footer p {
+.footer-p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     margin: 0;
     font-size: 14px;
 }
 
 footer a {
-    color: #ffffff;
+    color: #7db6ee;
     text-decoration: none;
 }
 
@@ -157,9 +167,105 @@ footer a:hover {
         gap: 20px;
     }
 
-    .password-section, .guid-section {
+    .password-section,
+    .guid-section {
         width: 100%;
         padding: 5px;
     }
 }
 
+
+
+.language-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: 10px auto;
+    height: 85px;
+}
+
+.swe-flag {
+    width: 50px;
+    height: auto;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+
+.uk-flag {
+    margin: 10px;
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.language-label {
+    width: 150px;
+    height: 55px;
+    position: relative;
+    display: block;
+    background: #004B87;
+    border-radius: 100px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(167, 56, 204, 0.4);
+    cursor: pointer;
+    transition: 1.9s;
+
+}
+
+.language-label span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+}
+
+.language-label::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #004B87, #FFCD00, #0ff, #004B87, #f00);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4), 0px -5px 15px rgba(127, 233, 70, 0.4);
+    transition: 1.9s;
+    animation: ease-out 6s;
+}
+
+.language-input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.language-input:checked+.language-label {
+    background: #C8102E;
+}
+
+.language-input:checked+.language-label::after {
+    transform: rotate(360deg);
+    left: 95px;
+    background: linear-gradient(180deg, #012169, #012169, #FFFFFF, #C8102E, #FFFFFF, #012169, #012169);
+    transition: 3s;
+    animation: ease-out 3s;
+
+}
+
+.language-label:active:after {
+    width: 40px;
+    height: 40px;
+}
+
+.flag-switch:hover {
+    transform: scale(1.1);
+}
+
+/* .language-input:checked+.language-label::after {
+    transform: rotate(360deg);
+    left: 95px;
+    background: linear-gradient(180deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);   
+    transition: 5s;
+
+} */
