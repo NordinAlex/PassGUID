@@ -56,26 +56,24 @@ body {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 20px;
-    width: 100%;
+    padding: 10px;
+    max-width: 900px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.guid-section {
-    height: 100%;
-    max-width: 1000px;
     overflow: hidden;
 }
 
-#bulk-guid-result {
-    margin-top: 10px;
+.results {
+    margin: 10px 0 20px 0;
     padding: 10px;
     background-color: #e9ecef;
     border-radius: 5px;
     word-break: break-all;
+}
+#bulk-guid-result {  
     max-height: var(--bulk-guid-result-height, 300px);
     overflow-y: auto;
 }
+
 
 .formatted-guid {
     margin-bottom: 5px;
@@ -103,7 +101,7 @@ input[type="number"], input[type="checkbox"] {
 button {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #1e77bc;
     color: white;
     border: none;
     border-radius: 5px;
@@ -121,13 +119,6 @@ button:disabled {
     cursor: not-allowed;
 }
 
-.results {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #e9ecef;
-    border-radius: 5px;
-    word-break: break-all;
-}
 
 button.copied {
     background-color: #28a745;
@@ -156,7 +147,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .wrapper {
         padding: 15px;
     }
@@ -171,3 +162,4 @@ footer a:hover {
         padding: 5px;
     }
 }
+
