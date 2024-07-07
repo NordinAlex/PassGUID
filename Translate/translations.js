@@ -1,5 +1,3 @@
-// translations.js
-
 const translations = {
     "sv": {
         "title": "PassGUID - Generera säkra lösenord och GUID",
