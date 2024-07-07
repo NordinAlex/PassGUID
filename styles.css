@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;   
+    src: url('Assets/font/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+
+
 *,
 *::before,
 *::after {
@@ -8,14 +17,14 @@ html,
 body {
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
 
-body {
-    font-family: Arial, sans-serif;
+body {   
     background-color: #f0f8ff;
     display: flex;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;    
 }
 
 .wrapper {
@@ -208,7 +217,7 @@ footer a:hover {
     border-radius: 100px;
     box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(167, 56, 204, 0.4);
     cursor: pointer;
-    transition: 1.9s;
+    transition: 0.8s;
 
 }
 
@@ -230,8 +239,8 @@ footer a:hover {
     border-radius: 50px;
     background: linear-gradient(45deg, #004B87, #FFCD00, #0ff, #004B87, #f00);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4), 0px -5px 15px rgba(127, 233, 70, 0.4);
-    transition: 1.9s;
-    animation: ease-out 6s;
+    transition: 0.8s;
+    animation: ease-out 1s;
 }
 
 .language-input {
@@ -247,11 +256,9 @@ footer a:hover {
 .language-input:checked+.language-label::after {
     transform: rotate(360deg);
     left: 95px;
-    background: linear-gradient(180deg, #012169, #012169, #FFFFFF, #C8102E, #FFFFFF, #012169, #012169);
-    /* background: linear-gradient(180deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);   */
-    transition: 3s;
-    animation: ease-out 3s;
-
+    background: linear-gradient(180deg, #012169, #012169, #FFFFFF, #C8102E, #FFFFFF, #012169, #012169);    
+    transition: 1s;
+    animation: ease-out 1s;
 }
 
 .language-label:active:after {

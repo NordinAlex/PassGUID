@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PassGUID - Generera Säkra Lösenord och GUID</title>
-    <meta name="description" content="PassGUID är ett verktyg för att enkelt och snabbt generera säkra lösenord och GUID. Använd PassGUID för att skapa säkra och unika lösenord och GUID.">
+    <title data-lang-key="title">PassGUID - Generera Säkra Lösenord och GUID</title>
+    <meta name="description"  content="PassGUID är ett verktyg för att enkelt och snabbt generera säkra lösenord och GUID. Använd PassGUID för att skapa säkra och unika lösenord och GUID.">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="Assets/favicon.ico" type="image/x-icon">
 </head>
@@ -13,103 +13,100 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <h1 class="main-title">PassGUID</h1>
-            <p class="sub-title">Enkel och snabb generering av säkra lösenord och GUID.</p>
+            <h1 class="main-title" data-lang-key="mainTitle">PassGUID</h1>
+            <p class="sub-title" data-lang-key="subTitle">Enkel och snabb generering av säkra lösenord och GUID.</p>
             <!-- Change language -->
-           
-                <div class="language-container">
-                    <img class="flag-switch swe-flag" src="Assets/Images/sweden-flag-icon.svg" alt="Swedish Flag">
-                    <input id="language-toggle" class="language-input" type="checkbox" />
-                    <label class="language-label" for="language-toggle"><span>Svenska</span></label>
-                    <img class="flag-switch uk-flag" src="Assets/Images/united-kingdom-flag-icon.svg" alt="UK Flag">                     
-                </div>
-              
-           
+            <div class="language-container">
+                <img class="flag-switch swe-flag" src="Assets/Images/sweden-flag-icon.svg" alt="Swedish Flag">
+                <input id="language-toggle" class="language-input" type="checkbox" />
+                <label class="language-label" for="language-toggle"><span  data-lang-key="languageLabelText">Svenska</span></label>
+                <img class="flag-switch uk-flag" src="Assets/Images/united-kingdom-flag-icon.svg" alt="UK Flag">
+            </div>
         </header>
 
         <main class="container">
             <!-- Lösenordsgenerator -->
             <section class="password-section">
-                <h2>Generera Lösenord</h2>
+                <h2 data-lang-key="passwordSectionTitle">Generera Lösenord</h2>
                 <fieldset>
-                    <legend>Lösenord inställningar</legend>
+                    <legend data-lang-key="passwordSettingsLegend">Lösenord inställningar</legend>
                     <span>
-                        <label for="length">Längd (6-100):</label>
-                        <input type="number" id="length" min="6" max="50" value="12">
+                        <label for="length" data-lang-key="lengthLabel">Längd (6-100):</label>
+                        <input type="number" id="length" min="6" max="100" value="16">
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="include-numbers" checked>
-                        <label for="include-numbers">Inkludera siffror</label>
+                        <label for="include-numbers" data-lang-key="includeNumbersLabel">Inkludera siffror</label>
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="include-lowercase" checked>
-                        <label for="include-lowercase">Inkludera små bokstäver</label>
+                        <label for="include-lowercase" data-lang-key="includeLowercaseLabel">Inkludera små bokstäver</label>
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="include-uppercase" checked>
-                        <label for="include-uppercase">Inkludera stora bokstäver</label>
+                        <label for="include-uppercase" data-lang-key="includeUppercaseLabel">Inkludera stora bokstäver</label>
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="include-special" checked>
-                        <label for="include-special">Inkludera specialtecken</label>
+                        <label for="include-special" data-lang-key="includeSpecialLabel">Inkludera specialtecken</label>
                     </span>
                 </fieldset>
                 <br>
-                <button onclick="generatePassword()">Generera Lösenord</button>
-                <button id="copy-password-btn" onclick="copyToClipboard('password-result', 'copy-password-btn')" disabled>Kopiera</button>
+                <button data-lang-key="generatePasswordButton" onclick="generatePassword()">Generera Lösenord</button>
+                <button id="copy-password-btn" data-lang-key="copyPasswordButton" onclick="copyToClipboard('password-result', 'copy-password-btn')" disabled>Kopiera</button>
                 <p id="password-result" class="results"></p>
             </section>
 
             <!-- GUID Generator -->
             <section class="guid-section">
-                <h2>Generera GUID</h2>
+                <h2 data-lang-key="guidSectionTitle">Generera GUID</h2>
                 <fieldset>
-                    <legend>GUID inställningar</legend>
+                    <legend data-lang-key="guidSettingsLegend">GUID inställningar</legend>
                     <span>
-                        <label for="bulk-count">Antal (1-500):</label>
+                        <label for="bulk-count" data-lang-key="bulkCountLabel">Antal (1-500):</label>
                         <input type="number" id="bulk-count" min="1" max="500" value="1">
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="guid-format-curly-braces" title="Lägg till måsvingar" onclick="toggleGUIDFormat()">
-                        <label for="guid-format-curly-braces" title="Lägg till måsvingar"> Med måsvingar {} </label>
+                        <label for="guid-format-curly-braces" data-lang-key="guidFormatCurlyBracesLabel"> Med måsvingar {} </label>
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="guid-format-double-quotes" title="Lägg till citationstecken" onclick="toggleGUIDFormat()">
-                        <label for="guid-format-double-quotes" title="Lägg till citationstecken"> Med citationstecken " "</label>
+                        <label for="guid-format-double-quotes" data-lang-key="guidFormatDoubleQuotesLabel"> Med citationstecken " "</label>
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="guid-format-commas" title="Separera varje GUID med kommatecken" onclick="toggleGUIDFormat()">
-                        <label for="guid-format-commas" title="Separera varje GUID med kommatecken"> Separera GUID med kommatecken</label>
+                        <label for="guid-format-commas" data-lang-key="guidFormatCommasLabel"> Separera GUID med kommatecken</label>
                     </span>
                     <br>
                     <span>
                         <input type="checkbox" id="guid-new-line" title="Varje GUID på ny rad" onclick="toggleGUIDFormat()">
-                        <label for="guid-new-line" title="Varje GUID på ny rad"> Varje GUID på ny rad</label>
+                        <label for="guid-new-line" data-lang-key="guidNewLineLabel"> Varje GUID på ny rad</label>
                     </span>
                 </fieldset>
                 <br>
-                <button onclick="generateBulkGUID()">Generera GUID</button>
-                <button id="copy-bulk-guid-btn" onclick="copyBulkToClipboard()" disabled>Kopiera GUID</button>
+                <button data-lang-key="generateGuidButton" onclick="generateBulkGUID()">Generera GUID</button>
+                <button id="copy-bulk-guid-btn" data-lang-key="copyGuidButton" onclick="copyBulkToClipboard()" disabled>Kopiera GUID</button>
                 <div id="bulk-guid-result" class="results"></div>
             </section>
         </main>
     </div>
 
     <footer class="footer">
-        <p class="footer-p">&copy; 2024 PassGUID. Gjord med ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
+        <p class="footer-p" data-lang-key="footerText">&copy; 2024 PassGUID. Gjord med ❤️. <a href="https://github.com/NordinAlex/PassGUID" target="_blank" rel="noopener">Open source on GitHub</a></p>
     </footer>    
 
-    <script src="passwordGenerator.js"></script>
-    <script src="guidGenerator.js"></script>
-    <script src="language.js"></script>
-    
+    <script  src="passwordGenerator.js"></script>
+    <script  src="guidGenerator.js"></script>
+    <script type="module" src="Translate/language.js"></script>
+  
 </body>
 
 </html>
